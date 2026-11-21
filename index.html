@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>PulseDeck</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="grain"></div>
+
+  <div class="topline" aria-hidden="true">
+    <div class="live-mark"><span class="live-dot"></span><span>LIVE SYSTEM AUDIO</span></div>
+    <div class="topline-right">PULSEDECK <span class="topline-divider">/</span> NOW PLAYING</div>
+  </div>
+
+  <main class="center-stage">
+    <section class="track-card" id="trackCard" aria-live="polite">
+      <div class="cover-wrap" id="coverWrap">
+        <div class="cover-placeholder" id="coverPlaceholder">
+          <svg viewBox="0 0 64 64" role="img" aria-label="Ícone de música">
+            <defs>
+              <linearGradient id="noteGradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ffffff"/>
+                <stop offset="1" stop-color="#b8a5ff"/>
+              </linearGradient>
+            </defs>
+            <path d="M42 10v33.2a9.2 9.2 0 1 1-4-7.6V20l-20 4.2v23a9.2 9.2 0 1 1-4-7.6V17.8L42 12z" fill="url(#noteGradient)"/>
+          </svg>
+        </div>
+        <img id="albumArt" class="album-art" alt="Capa do álbum" draggable="false">
+        <div class="cover-ring"></div>
+      </div>
+
+      <div class="track-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span><span id="trackEyebrow">NOW PLAYING</span></div>
+        <h1 id="trackTitle">Aguardando reprodução</h1>
+        <p id="trackArtist">O áudio do computador aparecerá aqui</p>
+        <div class="track-foot">
+          <span class="track-state"><span class="state-dot" id="stateDot"></span><span id="trackStatus">ESPERANDO ÁUDIO</span></span>
+          <span class="track-source">WINDOWS MEDIA SESSION</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="spectrum-area" aria-label="Visualizador de áudio">
+    <canvas id="spectrumCanvas"></canvas>
+    <div class="spectrum-caption"><span>LOW</span><span class="caption-center">REAL-TIME FREQUENCY</span><span>HIGH</span></div>
+  </section>
+
+  <div class="bottom-line" aria-hidden="true">
+    <span class="bottom-brand">PULSE<span>DECK</span></span>
+    <span class="bottom-note">AUDIO REACTIVE WALLPAPER</span>
+    <span class="bottom-version">01 — SYSTEM VISUALIZER</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
